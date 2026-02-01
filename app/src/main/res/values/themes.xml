@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.QuizApp" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.QuizApp" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
+    <style name="Theme.QuizApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
 </resources>
