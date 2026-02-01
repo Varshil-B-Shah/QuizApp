@@ -9,4 +9,9 @@
     <string name="check">Check</string>
     <string name="finish">FINISH</string>
     <string name="next">NEXT</string>
+    <string name="result">Result</string>
+    <string name="trophy_image">trophy_image</string>
+    <string name="hey_congratulations">Hey, Congratulations!</string>
+    <string name="your_score_is_out_of">Your score is %1$d out of %2$d</string>
+    <string name="text_view_progress">%1$d/%2$d</string>
 </resources>

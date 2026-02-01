@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
 import com.example.quizapp.ui.QuestionsActivity
+import com.example.quizapp.utils.Constants
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +22,7 @@ class MainActivity : ComponentActivity() {
         startButton.setOnClickListener {
             if (!editTextName.text.isEmpty()) {
                 Intent(this@MainActivity, QuestionsActivity::class.java).also {
+                    it.putExtra(Constants.USER_NAME, editTextName.text.toString())
                     startActivity(it)
                     finish()
                 }
