@@ -1,34 +1,32 @@
 package com.example.quizapp
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.quizapp.ui.theme.QuizAppTheme
+import com.example.quizapp.ui.QuestionsActivity
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-    }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+        val startButton: Button = findViewById(R.id.button_start)
+        val editTextName: EditText = findViewById(R.id.name)
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    QuizAppTheme {
-        Greeting("Android")
+        startButton.setOnClickListener {
+            if (!editTextName.text.isEmpty()) {
+                Intent(this@MainActivity, QuestionsActivity::class.java).also {
+                    startActivity(it)
+                    finish()
+                }
+            } else {
+                Toast.makeText(this@MainActivity, "Please enter your name", Toast.LENGTH_LONG).show()
+            }
+        }
     }
 }
